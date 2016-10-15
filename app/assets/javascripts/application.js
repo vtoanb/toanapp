@@ -18,13 +18,30 @@
 //= require_tree .
 jQuery.noConflict()
 
-jQuery(document).ready(function() {  
-  // use local storate to create order
-  if (!localStorage.pageLoadCount)
-    localStorage.pageLoadCount = 0;
-  localStorage.pageLoadCount = parseInt(localStorage.pageLoadCount) + 1;
-  jQuery(".toan").on("click",function(){
-   localStorage.pageLoadCount = parseInt(localStorage.pageLoadCount) + 1;
-  	console.log(localStorage.pageLoadCount);
-  });
+jQuery(document).ready(function() {
+  // if (!localStorage.cart_container){
+  // 	localStorage.cart_container = [];
+  // }
+  // else {
+  //   jQuery(".add-cart").on("click", function() {
+  //     var clickbtn = jQuery(this);
+  //     var food_id = clickbtn.parent().find("a").attr("href").split("/")[4];
+  //     if(clickbtn.text() === "Add to Cart"){
+  //     	clickbtn.text("Remove from Cart");
+  //     	// id as a key
+  //       var index = localStorage.cart_container.indexOf(food_id);
+  //       if (index === -1){
+  //     	  localStorage.cart_container.push(food_id);
+  //       }
+  //     }else{
+  //       clickbtn.text("Add to Cart");
+  //       var index = localStorage["dict"].indexOf(food_id);
+  //       if ( index > -1 ){
+  //         localStorage.cart_container.splice(index, 1);
+  //       };
+  //     };
+  //     console.log(localStorage.cart_container);
+  //   });
+  // // if user click to checkout we can collected foods
+  // };
 })
