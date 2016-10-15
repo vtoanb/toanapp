@@ -1,3 +1,10 @@
+<br>
+<div class="jumbotron">
+  <h1><%=@section_name %></h1>
+  <%= link_to "Sort by food's name", section_foods_path(sort: 'name', by: 'asc') %>
+</div>
+<br>
+<br>
 <div class="row">
   <% @foods.each do |food| %>
   <%= render food %>

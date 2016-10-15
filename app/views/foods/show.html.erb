@@ -1,0 +1,14 @@
+<br><br>
+<div class="row">
+  <div class="col-lg-6">
+  	<div class="card">
+  	  <img class="card-img-top img-fluid image-card" src=<%= @food.image_url %> alt="Card image cap">
+  	</div>
+  </div>
+  <div class="col-lg-6">
+    <h1><%= @food.name %></h1>
+    <h4>$<%= @food.price %>.00</h4>
+    <p><%= @food.description %></p>
+    <p><%= @food.count %></p>
+  </div>
+</div>
