@@ -9,9 +9,9 @@
 # Character.create(name: 'Luke', movie: movies.first)
 # create sections
 breakfast = Section.create(name: 'Breakfast', count: 0)
-# lunch = Section.create(name: 'Lunch', count: 0)
-# dinner = Section.create(name: 'Dinner', count: 0)
-# drinks = Section.create(name: 'Drinks', count: 0)
+lunch = Section.create(name: 'Lunch', count: 0)
+dinner = Section.create(name: 'Dinner', count: 0)
+drinks = Section.create(name: 'Drinks', count: 0)
 # let create 10 foods for breakfast
 # 10.times do
 #   puts Faker::Food.spice
@@ -21,24 +21,24 @@ breakfast = Section.create(name: 'Breakfast', count: 0)
                          description: Faker::Lorem.paragraph,
                          count: 0,
                          price: Faker::Number.number(5),
-                         # cuisine: Faker::Address.country,
-                         image_url: Faker::Avatar.image("my-own-slug", "50x50"))
-  # lunch.foods.create(name: Faker::Food.spice,
-  #                    description: Faker::Lorem.paragraph,
-  #                    count: 0,
-  #                    price: Faker::Number.number(5),
-  #                    cuisine: Faker::Address.country,
-  #                    image_url: Faker::Avatar.image("my-own-slug", "50x50"))
-  # dinner.foods.create(name: Faker::Food.spice,
-  #                     description: Faker::Lorem.paragraph,
-  #                     count: 0,
-  #                     price: Faker::Number.number(5),
-  #                     cuisine: Faker::Address.country,
-  #                     image_url: Faker::Avatar.image("my-own-slug", "50x50"))
-  # drinks.foods.create(name: Faker::Food.spice,
-  #                     description: Faker::Lorem.paragraph,
-  #                     count: 0,
-  #                     price: Faker::Number.number(5),
-  #                     cuisine: Faker::Address.country,
-  #                     image_url: Faker::Avatar.image("my-own-slug", "50x50"))
+                         cuisine: Faker::Address.country,
+                         image_url: "http://loremflickr.com/320/240?random=#{Faker::Number.number(1)}")
+  lunch.foods.create(name: Faker::Food.spice,
+                     description: Faker::Lorem.paragraph,
+                     count: 0,
+                     price: Faker::Number.number(5),
+                     cuisine: Faker::Address.country,
+                     image_url: "http://loremflickr.com/320/240?random=#{Faker::Number.number(1)}")
+  dinner.foods.create(name: Faker::Food.spice,
+                      description: Faker::Lorem.paragraph,
+                      count: 0,
+                      price: Faker::Number.number(5),
+                      cuisine: Faker::Address.country,
+                      image_url: "http://loremflickr.com/320/240?random=#{Faker::Number.number(1)}")
+  drinks.foods.create(name: Faker::Food.spice,
+                      description: Faker::Lorem.paragraph,
+                      count: 0,
+                      price: Faker::Number.number(5),
+                      cuisine: Faker::Address.country,
+                      image_url: "http://loremflickr.com/320/240?random=#{Faker::Number.number(1)}")
 end
