@@ -33,7 +33,7 @@ URL: **https://toanapp.herokuapp.com**
 * [x] Clicking on an item in the menu brings up its detail, where you see the description and a larger picture.
 * [x] User can click “order” on a menu item to go to a “Create Order” page.
 * [x] User is able to fill in their name, phone number, and address.
-* [x] User is taken to a “Thank you for your order page” that lists the name of item, the total cost (delivery should cost 20,000 VND), the user’s name, the user’s address, and the time the order was created in human-readable format (for example, Tuesday, December 1, 15:25).
+* [x] User is taken to a “Thank you for your order page” that lists the name of item, the total cost (delivery should cost $20.00 ), the user’s name, the user’s address, and the time the order was created in human-readable format (for example, Tuesday, December 1, 15:25).
 
 ### Optional:
 
@@ -54,15 +54,17 @@ The following **additional** features are implemented:
 The following **known issues**:
 
 * Don't have enough time to care about frontend
-*  
-
+* Js organize not good  enough
+* Code organize not good enough
+* Don't have enough time to optimize js eventhandling
+* Faker::Food cannot use in heroku, so I use people name
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough]('wt.gif')
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
