@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015150329) do
+ActiveRecord::Schema.define(version: 20161016045729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +52,9 @@ ActiveRecord::Schema.define(version: 20161015150329) do
     t.string   "phone"
     t.integer  "total_bill"
     t.string   "order_hash"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.boolean  "order_status"
   end
 
   add_foreign_key "foods", "sections"

@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   def create
   	# check if order exist or not
   	@user = User.where(order_hash: params[:hash]).first
+    # if user not exist with hash
   	if not @user
   		@user = User.create!(order_hash: params[:hash],
   			                 phone: 'empty',

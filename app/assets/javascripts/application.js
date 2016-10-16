@@ -65,7 +65,10 @@ jQuery(document).ready(function() {
         type: "POST",
         url: url,
         data: data,
-        // success: success,
+        success: function(response){
+          localStorage.hash = 0;
+          templocal = [];
+        },
         // dataType: dataType
       });
     });
