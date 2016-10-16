@@ -64,7 +64,7 @@ The following **known issues**:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough]('wt.gif')
+![Video Walkthrough](wt.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
