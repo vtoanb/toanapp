@@ -3,13 +3,23 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if Order.where(order_id: params[:order_id])
-      # when order Id  already exist, update items in order
-      # order has_many_foods via cards, card has many foods
-      Order.create(order_id: new_order_id)
+  	# check if order exist or not
+  	@user = User.where(order_hash: params[:hash]).first
+  	if not @user
+  		@user = User.create!(order_hash: params[:hash],
+  			                 phone: 'empty',
+  			                 address: 'empty',
+  			                 name: 'empty')
+  	end
+
+  	food_items = params[:food].split('/')
+  	puts food_items
+
+  	redirect_to action: 'show', id: @user.id
   end
 
   def show
+  	@user = User.find(params[:id])
   end
 
   def index

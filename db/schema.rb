@@ -10,51 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015095332) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "foods", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "price"
-    t.string   "image_url"
-    t.string   "cuisine"
-    t.integer  "count"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "order_id"
-    t.integer  "section_id"
-    t.index ["order_id"], name: "index_foods_on_order_id", using: :btree
-    t.index ["section_id"], name: "index_foods_on_section_id", using: :btree
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "delivery"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "order_id"
-    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
-  end
-
-  create_table "sections", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "foods", "orders"
-  add_foreign_key "foods", "sections"
-  add_foreign_key "orders", "users"
 end

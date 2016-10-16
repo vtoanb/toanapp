@@ -19,29 +19,52 @@
 jQuery.noConflict()
 
 jQuery(document).ready(function() {
-  // if (!localStorage.cart_container){
-  // 	localStorage.cart_container = [];
-  // }
-  // else {
-  //   jQuery(".add-cart").on("click", function() {
-  //     var clickbtn = jQuery(this);
-  //     var food_id = clickbtn.parent().find("a").attr("href").split("/")[4];
-  //     if(clickbtn.text() === "Add to Cart"){
-  //     	clickbtn.text("Remove from Cart");
-  //     	// id as a key
-  //       var index = localStorage.cart_container.indexOf(food_id);
-  //       if (index === -1){
-  //     	  localStorage.cart_container.push(food_id);
-  //       }
-  //     }else{
-  //       clickbtn.text("Add to Cart");
-  //       var index = localStorage["dict"].indexOf(food_id);
-  //       if ( index > -1 ){
-  //         localStorage.cart_container.splice(index, 1);
-  //       };
-  //     };
-  //     console.log(localStorage.cart_container);
-  //   });
-  // // if user click to checkout we can collected foods
-  // };
-})
+    if(!localStorage.hash){
+      localStorage.hash = 0;
+    };
+
+    if(localStorage.hash == 0){
+      jQuery.post( "/ajax-hash", function( data ) {
+        localStorage.hash = data;
+        console.log(localStorage.hash);
+      });
+    }else{
+      console.log(localStorage.hash);
+    };
+    var templocal = [];
+
+    
+
+    jQuery(".add-cart").on("click", function() {
+      var clickbtn = jQuery(this);
+      var food_id = clickbtn.parent().find("a").attr("href").split("/")[4];
+      if(clickbtn.text() === "Pick"){
+      	clickbtn.text("Remove");
+        templocal.push(food_id);
+        console.log(templocal);
+      }else{
+        clickbtn.text("Pick");
+        var i = templocal.indexOf(food_id);
+        templocal.splice(i, 1);
+        console.log(templocal);
+      };
+    });
+
+    // When user checkout
+    jQuery("a#checkout").on("click", function(){
+      event.preventDefault();
+      // Post data
+      var url = jQuery(this).attr('href');
+      var ser = "";
+      templocal.forEach(function(i){ser = ser + '/' + i});
+      var data = {'food': ser, 'hash': localStorage.hash};
+      console.log(data);
+      jQuery.ajax({
+        type: "POST",
+        url: url,
+        data: data,
+        // success: success,
+        // dataType: dataType
+      });
+    });
+});
