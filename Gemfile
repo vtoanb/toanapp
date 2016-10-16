@@ -40,10 +40,12 @@ end
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'faker', git: 'git@github.com:stympy/faker.git'  
+  # gem 'faker', git: 'git@github.com:stympy/faker.git'  
   # gem 'faker', remove because lack of faker
   gem 'rails-erd'
 end
+
+gem 'faker'
 
 group :development do
   gem 'web-console'
