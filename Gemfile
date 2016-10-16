@@ -37,9 +37,12 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
+gem 'faker', git: 'git@github.com:stympy/faker.git'  
+
+
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'faker', git: 'git@github.com:stympy/faker.git'  
+  # gem 'faker', git: 'git@github.com:stympy/faker.git'  
   # gem 'faker', remove because lack of faker
   gem 'rails-erd'
 end
