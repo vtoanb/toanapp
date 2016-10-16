@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
-  has_many :foods
+  belongs_to :food, optional: true
+  belongs_to :user
 
   def self.unique_id
   	(Faker::Number.number(4) + Time.now.utc.to_i.to_s)

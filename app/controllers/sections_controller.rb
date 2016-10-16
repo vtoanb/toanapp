@@ -9,6 +9,6 @@ class SectionsController < ApplicationController
 
   def send_hash
   	@new_hash = Order.unique_id
-  	render json: @new_hash
+   	render json: @new_hash
   end
 end

@@ -23,8 +23,10 @@ jQuery(document).ready(function() {
       localStorage.hash = 0;
     };
 
+
     if(localStorage.hash == 0){
       jQuery.post( "/ajax-hash", function( data ) {
+        
         localStorage.hash = data;
         console.log(localStorage.hash);
       });

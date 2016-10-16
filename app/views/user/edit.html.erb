@@ -1,0 +1,29 @@
+<div class="col-lg-6">
+  <%= form_for(@user, html: {class: "form-group"}) do |f| %>
+
+
+  <% if @user.errors %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control"  %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: "form-control"  %>
+  <%= f.label :address %>
+  <%= f.text_field :address, class: "form-control"  %>
+
+  <%= f.submit "Order now", class: "btn btn-default" %>
+<% end %>
+</div>
+
