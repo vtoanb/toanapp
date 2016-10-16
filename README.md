@@ -4,7 +4,7 @@
 
 Submitted by: **Vu Toan**
 
-Time spent: **30** hours spent in total
+Time spent: **25** hours spent in total
 
 URL: **https://toanapp.herokuapp.com**
 
