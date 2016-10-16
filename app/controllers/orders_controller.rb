@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   			                 name: 'empty')
   	end
 
-  	food_items = params[:food].split('/')
+  	food_items = params[:food].split('/') if params[:food]
     if food_items
     	# total bill
     	total = 0

@@ -1,0 +1,20 @@
+<br>
+<h3> Thank you for shopping from Toan' restaurant </h3>
+<br>
+<h5> items your orderd </h5>
+<ul>
+	<% @user.orders.each do |o| %>
+	  <li>item: <%= o.food.name %>, number <%= o.num_of_food %>, price $<%= o.food.price %> </li>
+	<% end %>
+</ul>
+<h6>Total: $<%= @user.total_bill %> </h6>
+<br>
+
+<h5>It's being ship to: </h5>
+
+
+<ul>
+  <li>shipping to address: <%= @user.address %></li>
+  <li>customer name: <%= @user.name %></li>
+  <li>customer phone: <%= @user.phone %></li>
+</ul>

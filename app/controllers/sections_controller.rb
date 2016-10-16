@@ -11,4 +11,10 @@ class SectionsController < ApplicationController
   	@new_hash = Order.unique_id
    	render json: @new_hash
   end
+
+  def contact
+  end
+
+  def menu
+  end
 end

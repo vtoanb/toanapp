@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get 'search' ,to: 'foods#index' 
   post 'ajax-hash', to: 'sections#send_hash'
   post 'orders/create', to: 'orders#create'
+  get 'contact', to: 'sections#contact'
+  get 'menu', to: 'sections#menu'
+
   
   resources :sections do
     resources :foods do

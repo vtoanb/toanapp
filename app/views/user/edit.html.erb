@@ -4,7 +4,7 @@
 
   <% if @user.errors %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> ,please update your informations </h2>
 
       <ul>
       <% @user.errors.full_messages.each do |message| %>
@@ -23,7 +23,9 @@
   <%= f.label :address %>
   <%= f.text_field :address, class: "form-control"  %>
 
-  <%= f.submit "Order now", class: "btn btn-default" %>
+  <br>
+
+  <%= f.submit "Order now", class: "btn btn-secondary" %>
 <% end %>
 </div>
 

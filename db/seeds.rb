@@ -10,25 +10,25 @@ drinks = Section.create(name: 'Drinks', count: 0)
   breakfast.foods.create(name: Faker::Name.name,
                          description: Faker::Lorem.paragraph,
                          count: 0,
-                         price: Faker::Number.number(5),
+                         price: Faker::Number.number(2),
                          cuisine: Faker::Address.country,
                          image_url: Faker::Placeholdit.image("320x240", 'jpg'))
   lunch.foods.create(name: Faker::Name.name,
                      description: Faker::Lorem.paragraph,
                      count: 0,
-                     price: Faker::Number.number(5),
+                     price: Faker::Number.number(2),
                      cuisine: Faker::Address.country,
                      image_url: Faker::Placeholdit.image("320x240", 'jpg'))
   dinner.foods.create(name: Faker::Name.name,
                       description: Faker::Lorem.paragraph,
                       count: 0,
-                      price: Faker::Number.number(5),
+                      price: Faker::Number.number(2),
                       cuisine: Faker::Address.country,
                       image_url: Faker::Placeholdit.image("320x240", 'jpg'))
   drinks.foods.create(name: Faker::Name.name,
                       description: Faker::Lorem.paragraph,
                       count: 0,
-                      price: Faker::Number.number(5),
+                      price: Faker::Number.number(1),
                       cuisine: Faker::Address.country,
                       image_url: Faker::Placeholdit.image("320x240", 'jpg'))
 end

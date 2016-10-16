@@ -60,8 +60,9 @@ jQuery(document).ready(function() {
       var ser = "";
       templocal.forEach(function(i){ser = ser + '/' + i});
       var data = {'food': ser, 'hash': localStorage.hash};
-      console.log(data);
-      jQuery.ajax({
+      console.log(ser);
+      if(ser.includes("/")){
+        jQuery.ajax({
         type: "POST",
         url: url,
         data: data,
@@ -71,5 +72,6 @@ jQuery(document).ready(function() {
         },
         // dataType: dataType
       });
+      };
     });
 });
